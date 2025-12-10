@@ -1,0 +1,102 @@
+.settings-page {
+  padding: 20px;
+}
+
+.settings-page h1 {
+  margin: 0 0 10px 0;
+}
+
+.settings-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.settings-header p {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+}
+
+.template-section h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.muted {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1rem;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.template-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.6rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  cursor: pointer;
+  align-items: stretch;
+}
+
+.template-card.active {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border-color: rgba(34,211,238,0.5);
+}
+
+.template-preview {
+  height: 90px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.template-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.template-id {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+}
+
+/* Previews use the same gradients as player templates */
+.template-preview.template-1 { background: linear-gradient(90deg, #22d3ee, #a855f7); }
+.template-preview.template-2 { background: linear-gradient(90deg, #ff7a18, #af002d); }
+.template-preview.template-3 { background: linear-gradient(90deg, #06b6d4, #0ea5a4); }
+.template-preview.template-4 { background: linear-gradient(90deg, #f97316, #f43f5e); }
+.template-preview.template-5 { background: linear-gradient(90deg, #7c3aed, #60a5fa); }
+.template-preview.template-6 { background: linear-gradient(90deg, #16a34a, #65a30d); }
+.template-preview.template-7 { background: linear-gradient(90deg, #ef4444, #fb7185); }
+.template-preview.template-8 { background: linear-gradient(90deg, #06b6d4, #3b82f6); }
+.template-preview.template-9 { background: linear-gradient(90deg, #a78bfa, #c084fc); }
+.template-preview.template-10 { background: linear-gradient(90deg, #f59e0b, #10b981); }
+
+/* Small layout hint icons for previews */
+.template-preview::after {
+  content: '';
+  display: block;
+  width: 42%;
+  height: 22%;
+  margin: 8px auto 0;
+  background: rgba(0,0,0,0.12);
+  border-radius: 4px;
+}
+
+.template-preview.template-2::after { width: 60%; height: 30%; }
+.template-preview.template-3::after { width: 20%; height: 60%; margin-left: 12%; }
+.template-preview.template-4::after { width: 70%; height: 40%; opacity: 0.9; }
+.template-preview.template-5::after { height: 12%; width: 90%; }
+.template-preview.template-6::after { width: 50%; height: 50%; border-radius: 50%; margin: 8px auto 0; }
+.template-preview.template-7::after { width: 28%; height: 60%; margin-left: 12%; }
+.template-preview.template-8::after { width: 60%; height: 28%; }
+.template-preview.template-9::after { width: 80%; height: 18%; }
+.template-preview.template-10::after { width: 40%; height: 20%; border-radius: 999px; }
