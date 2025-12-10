@@ -40,13 +40,24 @@ app.get('/api/saavn/stream/:id', async (req, res) => {
 });
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist'), {
+  maxAge: '1d',
+  etag: true
+}));
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  const indexPath = path.join(__dirname, 'dist', 'index.html');
+  console.log('Serving index.html from:', indexPath);
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      console.error('Error sending file:', err);
+      res.status(500).send('Error loading application');
+    }
+  });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Static files served from: ${path.join(__dirname, 'dist')}`);
 });
